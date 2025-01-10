@@ -1,5 +1,6 @@
+import { RequestHandler } from 'express'
 
-exports.getAllProducts = (req, res) => {
+export const getAllProducts: RequestHandler = (req, res) => {
 
 	const products = [
 		{
@@ -16,7 +17,7 @@ exports.getAllProducts = (req, res) => {
 
 }
 
-exports.addProduct = (req, res) => {
+export const addProduct: RequestHandler= (req, res) => {
 
 	res.status(201).json({
 		status: 'success',

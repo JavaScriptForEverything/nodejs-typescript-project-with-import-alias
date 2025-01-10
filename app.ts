@@ -1,5 +1,5 @@
-const express = require('express')
-const productRouter = require('@/routes/productRoutes')
+import express from 'express'
+import productRouter from '@/routes/productRoutes'
 
 const app = express()
 
@@ -9,4 +9,4 @@ app.use(express.json({ limit: '20kb' }))
 
 app.use('/api/products', productRouter)
 
-module.exports = app
+export default app

@@ -1,5 +1,5 @@
-const request = require('supertest')
-const app = require('@/app')
+import request from 'supertest'
+import app from '@/app'
 
 it('GET /api/products', async () => {
 	const res = await request(app)
