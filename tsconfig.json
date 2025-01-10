@@ -3,11 +3,11 @@
     "target": "es2016",  
     // "lib": [],       
     "module": "commonjs",
-    "rootDir": "./src", 
+    "rootDir": "./", 
     "outDir": "./dist",  
     "baseUrl": "./",  
     "paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./*"]
 		}, 
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,8 +16,8 @@
     "allowSyntheticDefaultImports": true, 
     "noImplicitAny": true,
     "strictNullChecks": true, 
-    "typeRoots": ["./src/types", "./node_modules/@types"],
+    // "typeRoots": ["./src/types", "./node_modules/@types"],
   },
-  "include": ["src/**/*", "__tests__"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
+  // "include": ["src/**/*", "__tests__", "controllers", "routes", "app.ts", "server.ts"],
+  // "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }
