@@ -8,14 +8,15 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon server.ts",
+    "dev": "nodemon ./src/server.ts",
     "start": "node .",
     "test:watch": "jest --watch-all --no-cache",
     "test": "jest"
   },
   "dependencies": {
     "express": "^4.21.2",
-    "module-alias": "^2.2.3"
+    "module-alias": "^2.2.3",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
