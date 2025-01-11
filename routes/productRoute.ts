@@ -1,10 +1,10 @@
-import { Router } from 'express'
 import * as productController from '@/controllers/productController'
+import { Router } from 'express'
 
-const router = Router()
+export const router = Router()
 
+// => /api/products
 router.route('/')
-	.get(productController.getAllProducts)
+	.get(productController.getProducts)
 	.post(productController.addProduct)
 
-export default router

@@ -16,8 +16,5 @@
     "allowSyntheticDefaultImports": true, 
     "noImplicitAny": true,
     "strictNullChecks": true, 
-    // "typeRoots": ["./src/types", "./node_modules/@types"],
   },
-  // "include": ["src/**/*", "__tests__", "controllers", "routes", "app.ts", "server.ts"],
-  // "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }
