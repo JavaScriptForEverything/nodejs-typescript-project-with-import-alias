@@ -6,8 +6,9 @@ import crypto from 'node:crypto'
 
 export const products: Product[] = [
 	{
-		// _id: new Types.ObjectId('677f6f49e59bd404d1121fc2'),
+		_id: new Types.ObjectId('677f6f49e59bd404d1121fc2'),
 		name: 'product-21',
+		slug: 'product-21',
 		price: 650,
 		coverPhoto: {
 			public_id: crypto.randomUUID().toString(),
@@ -16,8 +17,9 @@ export const products: Product[] = [
 		},
 	},
 	{
-		// _id: new Types.ObjectId('677f6f49e59bd404d1121fc2'),
+		_id: new Types.ObjectId('677f6f49e59bd404d1121fc2'),
 		name: 'product-22',
+		slug: 'product-22',
 		price: 650,
 		coverPhoto: {
 			public_id: crypto.randomUUID().toString(),
@@ -26,22 +28,3 @@ export const products: Product[] = [
 		},
 	},
 ]
-
-// export const products = [
-// 	{
-// 		// _id: '677e608df94b5dd496895cc2',
-// 		name: 'product 1 added by script',
-// 		price: 300,
-// 		// coverPhoto: {
-// 		// 	public_id: '',
-// 		// 	secure_url: '/upload/products/image.png'
-// 		// }
-
-// 	}
-// ]
-
-
-		// coverPhoto: `
-		// 	data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7
-		// `
-

@@ -3,6 +3,7 @@ import type { ProductDocument } from '@/types/product'
 import { model, Schema } from 'mongoose'
 import { Collection } from '@/types/constants'
 import { sanitizeSchema } from '@/services/sanitizeService'
+import slug from 'slugify'
 
 
 const productSchema = new Schema<ProductDocument>({
@@ -12,6 +13,13 @@ const productSchema = new Schema<ProductDocument>({
 		trim: true,
 		lowercase: true,
 		unique: true,
+	},
+	slug: { 							// create from name property via pre('save') hook 
+		type: String,
+		unique: true,
+		trim: true,
+		lowercase: true,
+		default: '',
 	},
 
 	price: {
@@ -37,65 +45,16 @@ const productSchema = new Schema<ProductDocument>({
 productSchema.plugin(sanitizeSchema)
 
 
+productSchema.pre('save', function(next) {
+	this.price = +this.price 								// convert to number
+	// this.quantity = +this.quantity
+
+	const slugString = this.slug.trim() ? this.slug : this.name
+	this.slug = slug(slugString, { lower: true })
+
+	next()
+})
+
 // => use constansts
 const Product = model<ProductDocument, Model<ProductDocument>>(Collection.Product, productSchema)
 export default Product
-
-
-
-/*
-.get()
-.set()
-.method()
-.methods
-
-.static()
-.statics
-
-.virtual
-.virtuals
-.virtualPath
-
-.pre
-.post
-.pick
-.plugin
-
-.query
-.queue
-.remove
-.requiredPath
-
-.emit
-.on
-.once
-.off
-.add
-.addListener
-.eventNames
-.getMaxListeners
-.listenerCounts
-.listeners
-.removeListener
-.removeAllListeners
-
-.alias
-.childSchemas
-.clone
-.path
-.paths
-.pathType
-.eachPath
-.loadClass
-
-.discriminator
-.discriminators
-
-.index
-.indexes
-.searchIndex
-.clearIndexes
-.removeIndex
-
-
-*/

@@ -10,7 +10,7 @@
     "build": "tsc",
     "dev": "nodemon src/server.ts",
     "start": "node .",
-    "seeder:base": "ts-node ./seeder/seeder.ts",
+    "seeder:base": "ts-node src/seeder/seeder.ts",
     "seeder:read": "yarn seeder:base --read",
     "seeder:import": "yarn seeder:base --import",
     "seeder:delete": "yarn seeder:base --delete",
@@ -33,6 +33,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "sanitize-html": "^2.14.0",
+    "slugify": "^1.6.6",
     "tsconfig-paths": "^4.2.0",
     "validator": "^13.12.0"
   },

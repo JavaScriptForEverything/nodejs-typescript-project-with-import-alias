@@ -9,12 +9,6 @@ const config: Config = {
 		'^@/(.*)$': '<rootDir>/src/$1'
 	},
 
-  // moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }), // Map import aliases
-  // transform: {
-  //   '^.+\\.ts$': 'ts-jest',
-  // },
-  // moduleFileExtensions: ['ts', 'js', 'json'],
-
 	verbose: true,
 	testMatch: ["**/__tests__/**/*.test.ts"],
 	setupFilesAfterEnv: ['./jest.setup.ts'],

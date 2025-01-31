@@ -17,6 +17,7 @@ export type Product = {
 	_id?: Types.ObjectId
 
 	name: string
+	slug: string
 	price: number
 	coverPhoto: Image
 }
