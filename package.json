@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon server.ts",
+    "dev": "nodemon src/server.ts",
     "start": "node .",
     "seeder:base": "ts-node ./seeder/seeder.ts",
     "seeder:read": "yarn seeder:base --read",
