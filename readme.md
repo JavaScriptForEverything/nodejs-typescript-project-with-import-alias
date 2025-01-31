@@ -4,6 +4,36 @@
 
 
 
+###### Method-1: (Regular) Project Setup
+```
+# make sure mongodb is running on (default) port 27017
+$ sudo systemctl status mongod 	                        # on Linux Check database status
+
+$ git clone https://github.com/JavaScriptForEverything/nodejs-typescript-project-with-import-alias.git
+
+$ yarn install
+$ yarn dev
+
+$ yarn build
+$ yarn start
+```
+
+###### Method-2: (Docker) Project Setup
+```
+# make sure docker and docker socket deamon running
+$ sudo systemctl status docker docker.socket 	
+
+$ docker compose build
+$ docker compose up --detach                            # 
+$ docker compose stop
+$ docker compose start
+
+$ docker compose config --services 	                # => backend ...
+$ docker compose logs --follow backend                  # See backend logs continuously
+```
+
+
+
 **Why do we need `import alias`?**
 
 `import alias` allows to use `absolute path` instead of `relative path` which make life easier to move files to any location without worring about to re-correct import path.

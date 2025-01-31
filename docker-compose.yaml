@@ -1,0 +1,48 @@
+services:
+  mongodb_svc:
+    image: mongo
+    container_name: mongodb_container
+    ports:
+      - 27017:27017
+    restart: always
+    volumes:
+      # - ./_docker-volumes/data:/data/db     # search in doc
+      - mongo-db:/data/db     
+    networks:
+      - mern_network
+
+  backend_svc:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: backend
+    container_name: backend_container
+    working_dir: /app
+    ports:
+      - 5000:5000
+      - 35729:35729
+
+    restart: always
+    volumes:
+      - .:/app
+
+    env_file: 
+      - .env 
+
+    environment:
+      NODE_ENV: development
+      MONGO_URI: mongodb://mongodb_container/db-import-alias
+    
+    depends_on:
+      - mongodb_svc
+    
+    networks:
+      - mern_network
+
+
+volumes:
+  mongo-db: 
+
+networks:
+  mern_network: 
+    driver: bridge
